@@ -1,4 +1,7 @@
 package com.server.kubacknotification.infra.jpa.repository;
 
-public class AJpaRepository {
+import com.server.kubacknotification.infra.jpa.entity.AEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AJpaRepository extends JpaRepository<AEntity, Long> {
 }
