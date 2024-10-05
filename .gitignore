@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### macOS ###
+.DS_Store
+
+### applicaion 제외 ###
+src/main/resources/application.yaml
