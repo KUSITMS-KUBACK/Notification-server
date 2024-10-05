@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class PaymentMessage {
 	private Long userId;
+	private String email;
+	private String userName;
 	private String seatNumber;
 	private String seatGrade;
 	private String payment;
