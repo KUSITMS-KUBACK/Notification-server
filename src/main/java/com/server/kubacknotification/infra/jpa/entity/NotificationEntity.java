@@ -16,17 +16,23 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AEntity {
+public class NotificationEntity {
     @Id
     @GeneratedValue
     private Long id;
     @Column(nullable = false)
-    private String name;
+    private Long userId;
+    @Column(nullable = false)
+    private String title;
+    @Column(nullable = false)
+    private String content;
 
-    public static AEntity toEntity(
+    public static NotificationEntity toEntity(
             Long id,
-            String name
+            Long userId,
+            String title,
+            String content
     ) {
-        return new AEntity(id, name);
+        return new NotificationEntity(id, userId, title, content);
     }
 }
