@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NotificationMapper {
-    public Notification toDomain(Notification notification) {
+    public Notification toDomain(NotificationEntity notification) {
         return Notification.toDomain(
                 notification.getId(),
                 notification.getUserId(),

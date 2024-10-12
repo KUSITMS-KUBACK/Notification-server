@@ -5,9 +5,7 @@ import com.server.kubacknotification.domain.repository.NotificationRepository;
 import com.server.kubacknotification.infra.jpa.repository.NotificationJpaRepository;
 import com.server.kubacknotification.infra.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
-@Repository
 @RequiredArgsConstructor
 public class NotificationRepositoryImpl implements NotificationRepository {
     private final NotificationJpaRepository notificationJpaRepository;

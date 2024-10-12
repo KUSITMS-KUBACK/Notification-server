@@ -1,7 +1,7 @@
 package com.server.kubacknotification.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.server.kubacknotification.application.dto.request.CreateTicketOpenRequest;
+import com.server.kubacknotification.application.dto.request.TicketOpenMessage;
 import com.server.kubacknotification.application.service.NotificationService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,20 +19,20 @@ public class NotificationControllerTest {
     @Autowired
     MockMvc mvc;
 
-    @MockBean
-    NotificationService notificationService;
-
     @Test
     @DisplayName("티켓팅 홍보 알림 테스트")
     void createTicketOpenNotifications() throws Exception {
         //given
-        CreateTicketOpenRequest createTicketOpenRequest = new CreateTicketOpenRequest(
+        TicketOpenMessage ticketOpenMessage = new TicketOpenMessage(
                 "뮤지컬 킹키부츠 티켓 오픈",
-                "뮤지컬 킹키부츠 2024.10.10.(목) 14:00에 티켓이 오픈됩니다!"
+                "뮤지컬 킹키부츠 2024.10.10.(목) 14:00에 티켓이 오픈됩니다!",
+                "somin455@gmail.com",
+                1L,
+                "윤소민"
         );
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String requestJson = objectMapper.writeValueAsString(createTicketOpenRequest);
+        String requestJson = objectMapper.writeValueAsString(ticketOpenMessage);
 
         //when
         mvc.perform(post("/api/notifications/ticket-open")

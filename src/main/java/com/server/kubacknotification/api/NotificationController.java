@@ -1,6 +1,6 @@
 package com.server.kubacknotification.api;
 
-import com.server.kubacknotification.application.dto.request.CreateTicketOpenRequest;
+import com.server.kubacknotification.application.dto.request.TicketOpenMessage;
 import com.server.kubacknotification.application.service.NotificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ public class NotificationController {
     private final NotificationService notificationService;
 
     @PostMapping("/api/notifications")
-    public void createTicketOpenNotifications(@RequestBody CreateTicketOpenRequest createTicketOpenRequest) {
-        notificationService.createTicketOpenNotification(createTicketOpenRequest);
+    public void createTicketOpenNotifications(@RequestBody TicketOpenMessage ticketOpenMessage) {
+        notificationService.createTicketOpenNotification(ticketOpenMessage);
     }
 }
