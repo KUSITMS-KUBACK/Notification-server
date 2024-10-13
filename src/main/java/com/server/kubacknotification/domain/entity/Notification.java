@@ -8,13 +8,17 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class A {
+public class Notification {
     private Long id;
-    private String name;
+    private Long userId;
+    private String title;
+    private String content;
 
-    public static A toDomain(
+    public static Notification toDomain(
             Long id,
-            String name) {
-        return new A(id, name);
+            Long userId,
+            String title,
+            String content) {
+        return new Notification(id, userId, title, content);
     }
 }
